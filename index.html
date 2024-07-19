@@ -9,12 +9,16 @@
 <body>
     <h1>ビンゴゲーム</h1>
     <div id="bingo-card"></div>
-    <button onclick="generateBingoCard()">ビンゴカードを生成</button>
     <h2>当選番号</h2>
     <div id="drawn-numbers"></div>
     <button onclick="drawNumber()">番号を引く</button>
 
     <script src="script.js"></script>
+    <script>
+        // ページロード時にビンゴカードを生成
+        window.onload = function() {
+            generateBingoCard();
+        };
+    </script>
 </body>
 </html>
-
