@@ -2,13 +2,13 @@ const BINGO_SIZE = 5;
 const MAX_NUMBER = 45;  // 画像の数に合わせて45に変更
 let drawnNumbers = [];
 
-// 固定のビンゴカード番号配列
-const fixedNumbers = [
-    [1, 16, 31, 46, 61],
-    [2, 17, 32, 47, 62],
-    [3, 18, 'FREE', 48, 63],
-    [4, 19, 34, 49, 64],
-    [5, 20, 35, 50, 65]
+// 固定のビンゴカード画像配列
+const fixedImages = [
+    ["1.png", "2.png", "3.png", "4.png", "5.png"],
+    ["6.png", "7.png", "8.png", "9.png", "10.png"],
+    ["11.png", "12.png", "free.png", "13.png", "14.png"],
+    ["15.png", "16.png", "17.png", "18.png", "19.png"],
+    ["20.png", "21.png", "22.png", "23.png", "24.png"]
 ];
 
 function generateBingoCard() {
@@ -18,14 +18,14 @@ function generateBingoCard() {
     for (let i = 0; i < BINGO_SIZE; i++) {
         for (let j = 0; j < BINGO_SIZE; j++) {
             const cell = document.createElement('div');
-            if (fixedNumbers[i][j] === 'FREE') {
-                cell.textContent = 'FREE';
+            const img = document.createElement('img');
+            img.src = `images/${fixedImages[i][j]}`;  // 画像のパスを指定
+            cell.appendChild(img);
+
+            if (fixedImages[i][j] === "free.png") {
                 cell.classList.add('free');
-            } else {
-                const img = document.createElement('img');
-                img.src = `images/${fixedNumbers[i][j]}.png`;  // 画像のパスを指定
-                cell.appendChild(img);
             }
+            
             bingoCard.appendChild(cell);
         }
     }
