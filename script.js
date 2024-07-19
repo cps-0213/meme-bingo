@@ -25,9 +25,9 @@ function generateBingoCard() {
 
 function generateBingoNumbers() {
     const numbers = Array.from({ length: BINGO_SIZE }, (_, i) => {
-        const start = i * 15 + 1;
-        const end = start + 15;
-        return shuffle(Array.from({ length: 15 }, (_, j) => start + j)).slice(0, BINGO_SIZE);
+        const start = i * 9 + 1;
+        const end = start + 9;
+        return shuffle(Array.from({ length: 9 }, (_, j) => start + j)).slice(0, BINGO_SIZE);
     });
 
     return numbers[0].map((_, colIndex) => numbers.map(row => row[colIndex]));
