@@ -1,5 +1,5 @@
 const BINGO_SIZE = 5;
-const MAX_NUMBER = 75;
+const MAX_NUMBER = 45;  // 画像の数に合わせて45に変更
 let drawnNumbers = [];
 
 function generateBingoCard() {
@@ -10,10 +10,13 @@ function generateBingoCard() {
     for (let i = 0; i < BINGO_SIZE; i++) {
         for (let j = 0; j < BINGO_SIZE; j++) {
             const cell = document.createElement('div');
-            cell.textContent = numbers[i][j];
             if (i === 2 && j === 2) {
                 cell.textContent = 'FREE';
                 cell.classList.add('free');
+            } else {
+                const img = document.createElement('img');
+                img.src = `images/${numbers[i][j]}.png`;  // 画像のパスを指定
+                cell.appendChild(img);
             }
             bingoCard.appendChild(cell);
         }
@@ -59,3 +62,4 @@ function displayDrawnNumbers() {
         drawnNumbersDiv.appendChild(numberDiv);
     });
 }
+
