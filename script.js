@@ -4,11 +4,11 @@ let drawnNumbers = [];
 
 // 固定のビンゴカード画像配列
 const fixedImages = [
-    ["1.png", "2.png", "3.png", "4.png", "5.png"],
-    ["6.png", "7.png", "8.png", "9.png", "10.png"],
-    ["11.png", "12.png", "free.png", "13.png", "14.png"],
-    ["15.png", "16.png", "17.png", "18.png", "19.png"],
-    ["20.png", "21.png", "22.png", "23.png", "24.png"]
+    ["a1.png", "2.png", "3.png", "4.png", "5.png"],
+    ["a6.png", "7.png", "8.png", "9.png", "10.png"],
+    ["a3.png", "12.png", "free.png", "13.png", "14.png"],
+    ["a8.png", "16.png", "17.png", "18.png", "19.png"],
+    ["a7.png", "21.png", "22.png", "23.png", "24.png"]
 ];
 
 function generateBingoCard() {
@@ -19,7 +19,7 @@ function generateBingoCard() {
         for (let j = 0; j < BINGO_SIZE; j++) {
             const cell = document.createElement('div');
             const img = document.createElement('img');
-            img.src = `images/${fixedImages[i][j]}`;  // 画像のパスを指定
+            img.src = `images/`;  // 画像のパスを指定
             cell.appendChild(img);
 
             if (fixedImages[i][j] === "free.png") {
