@@ -2,43 +2,33 @@ const BINGO_SIZE = 5;
 const MAX_NUMBER = 45;  // 画像の数に合わせて45に変更
 let drawnNumbers = [];
 
+// 固定のビンゴカード番号配列
+const fixedNumbers = [
+    [1, 16, 31, 46, 61],
+    [2, 17, 32, 47, 62],
+    [3, 18, 'FREE', 48, 63],
+    [4, 19, 34, 49, 64],
+    [5, 20, 35, 50, 65]
+];
+
 function generateBingoCard() {
     const bingoCard = document.getElementById('bingo-card');
     bingoCard.innerHTML = '';
-    const numbers = generateBingoNumbers();
 
     for (let i = 0; i < BINGO_SIZE; i++) {
         for (let j = 0; j < BINGO_SIZE; j++) {
             const cell = document.createElement('div');
-            if (i === 2 && j === 2) {
+            if (fixedNumbers[i][j] === 'FREE') {
                 cell.textContent = 'FREE';
                 cell.classList.add('free');
             } else {
                 const img = document.createElement('img');
-                img.src = `images/${numbers[i][j]}.png`;  // 画像のパスを指定
+                img.src = `images/${fixedNumbers[i][j]}.png`;  // 画像のパスを指定
                 cell.appendChild(img);
             }
             bingoCard.appendChild(cell);
         }
     }
-}
-
-function generateBingoNumbers() {
-    const numbers = Array.from({ length: BINGO_SIZE }, (_, i) => {
-        const start = i * 9 + 1;
-        const end = start + 9;
-        return shuffle(Array.from({ length: 9 }, (_, j) => start + j)).slice(0, BINGO_SIZE);
-    });
-
-    return numbers[0].map((_, colIndex) => numbers.map(row => row[colIndex]));
-}
-
-function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
 }
 
 function drawNumber() {
@@ -62,4 +52,3 @@ function displayDrawnNumbers() {
         drawnNumbersDiv.appendChild(numberDiv);
     });
 }
-
