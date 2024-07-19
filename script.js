@@ -1,14 +1,14 @@
 const BINGO_SIZE = 5;
-const MAX_NUMBER = 45;  // 画像の数に合わせて45に変更
+const MAX_NUMBER = 24;  // 画像の数に合わせて24に変更 (freeを除く)
 let drawnNumbers = [];
 
 // 固定のビンゴカード画像配列
 const fixedImages = [
-    ["a1.png", "2.png", "3.png", "4.png", "5.png"],
-    ["a6.png", "7.png", "8.png", "9.png", "10.png"],
-    ["a3.png", "12.png", "free.png", "13.png", "14.png"],
-    ["a8.png", "16.png", "17.png", "18.png", "19.png"],
-    ["a7.png", "21.png", "22.png", "23.png", "24.png"]
+    ["a1.png", "a2.png", "a3.png", "a4.png", "a5.png"],
+    ["a6.png", "a7.png", "a8.png", "a9.png", "b1.png"],
+    ["b2.png", "b3.png", "free.png", "b4.png", "b5.png"],
+    ["b6.png", "b7.png", "b8.png", "b9.png", "c1.png"],
+    ["c2.png", "c3.png", "c4.png", "c5.png", "c6.png"]
 ];
 
 function generateBingoCard() {
@@ -19,7 +19,7 @@ function generateBingoCard() {
         for (let j = 0; j < BINGO_SIZE; j++) {
             const cell = document.createElement('div');
             const img = document.createElement('img');
-            img.src = `images/`;  // 画像のパスを指定
+            img.src = `images/${fixedImages[i][j]}`;  // 画像のパスを指定
             cell.appendChild(img);
 
             if (fixedImages[i][j] === "free.png") {
