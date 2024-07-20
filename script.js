@@ -30,25 +30,3 @@ function generateBingoCard() {
         }
     }
 }
-
-function drawNumber() {
-    if (drawnNumbers.length >= MAX_NUMBER) return;
-
-    let number;
-    do {
-        number = Math.floor(Math.random() * MAX_NUMBER) + 1;
-    } while (drawnNumbers.includes(number));
-
-    drawnNumbers.push(number);
-    displayDrawnNumbers();
-}
-
-function displayDrawnNumbers() {
-    const drawnNumbersDiv = document.getElementById('drawn-numbers');
-    drawnNumbersDiv.innerHTML = '';
-    drawnNumbers.sort((a, b) => a - b).forEach(number => {
-        const numberDiv = document.createElement('div');
-        numberDiv.textContent = number;
-        drawnNumbersDiv.appendChild(numberDiv);
-    });
-}
