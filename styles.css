@@ -1,6 +1,10 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
+    background-image: url('images/g1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 #bingo-card {
@@ -9,6 +13,9 @@ body {
     grid-gap: 10px;
     margin: 20px auto;
     max-width: 300px;
+    background-color: rgba(255, 255, 255, 0.8); /* 背景を半透明にする */
+    padding: 10px;
+    border-radius: 10px;
 }
 
 #bingo-card div {
@@ -29,19 +36,3 @@ body {
 #bingo-card .free {
     background-color: #ccc;
 }
-
-#drawn-numbers {
-    margin: 20px auto;
-    max-width: 300px;
-}
-
-#drawn-numbers div {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    margin: 2px;
-    border: 1px solid #000;
-    background-color: #eee;
-}
-
