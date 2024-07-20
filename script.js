@@ -4,11 +4,11 @@ let drawnNumbers = [];
 
 // 固定のビンゴカード画像配列
 const fixedImages = [
-    ["a1.png", "a2.png", "a3.png", "a4.png", "a5.png"],
-    ["a6.png", "a7.png", "a8.png", "a9.png", "b1.png"],
-    ["b2.png", "b3.png", "free.png", "b4.png", "b5.png"],
-    ["b6.png", "b7.png", "b8.png", "b9.png", "c1.png"],
-    ["c2.png", "c3.png", "c4.png", "c5.png", "c6.png"]
+    ["a1.png", "b1.png", "c1.png", "d3.png", "e7.png"],
+    ["a6.png", "b3.png", "c3.png", "d2.png", "e8.png"],
+    ["a2.png", "b5.png", "free.png", "d1.png", "e9.png"],
+    ["a7.png", "b7.png", "c7.png", "d9.png", "e4.png"],
+    ["a3.png", "b8.png", "c94.png", "d8.png", "e5.png"]
 ];
 
 function generateBingoCard() {
